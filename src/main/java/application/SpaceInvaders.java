@@ -67,6 +67,7 @@ public class SpaceInvaders extends Application {
         Canvas canvas = new Canvas(WIDTH, HEIGHT);
         gc = canvas.getGraphicsContext2D();
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(100), e->run(gc)));
+        timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
         canvas.setCursor(Cursor.MOVE);
         canvas.setOnMouseMoved(e -> mouseX = e.getX());
