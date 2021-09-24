@@ -105,7 +105,8 @@ public class SpaceInvaders extends Application {
         if (gameOver) {
             gc.setFont(Font.font(35));
             gc.setFill(Color.YELLOW);
-            gc.fillText("Game Over \n Your Score is : " + score + " \n Click to play again", WIDTH/2, HEIGHT/2.5);
+            gc.fillText("Game Over \n Your Score is : " + score
+                    + " \n Click to play again", WIDTH/2, HEIGHT/2.5);
         }
         univ.forEach(Universe::draw);
 
@@ -184,7 +185,7 @@ public class SpaceInvaders extends Application {
             if (exploding) {
                 gc.drawImage(EXPLOSION_IMG,
                         explosionsStep % EXPLOSION_COL *EXPLOSION_W,
-                        explosionsStep/EXPLOSION_ROWS*EXPLOSION_H+1,
+                        (explosionsStep/EXPLOSION_ROWS)*EXPLOSION_H+1,
                         EXPLOSION_W, EXPLOSION_H, posX, posY, size, size);
             }
             else {
@@ -193,7 +194,8 @@ public class SpaceInvaders extends Application {
         }
 
         public boolean colide(Rocket other){
-            int d = distance(this.posX + size/2, this.posY + size/2, other.posX + other.size/2, other.posY + other.size/2);
+            int d = distance(this.posX + size/2, this.posY + size/2,
+                    other.posX + other.size/2, other.posY + other.size/2);
             return d < other.size/2 + this.size/2;
         }
 
@@ -206,7 +208,7 @@ public class SpaceInvaders extends Application {
 
     // computer player
     public class Bomb extends Rocket {
-        int SPEED = (score/2) + 2;
+        int SPEED = (score/5) + 2;
 
         public Bomb(int posX, int posY, int size, Image image) {
             super(posX, posY, size, image);
@@ -249,7 +251,7 @@ public class SpaceInvaders extends Application {
 
         public boolean colide(Rocket rocket) {
             int distance = distance(this.posX + size/2, this.posY + size/2,
-                    rocket.posX + rocket.size, rocket.posY + rocket.size/2);
+                    rocket.posX + rocket.size/2, rocket.posY + rocket.size/2);
             return distance < rocket.size/2 + size/2;
         }
     }
@@ -288,7 +290,7 @@ public class SpaceInvaders extends Application {
     }
 
     int distance(int x1, int y1, int x2, int y2) {
-        return  ((int) Math.sqrt(Math.pow(x1-x2, 2)) + (int) Math.pow((y1-y2),2));
+        return (int) Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
     }
 
     public static void main(String args[]) {
