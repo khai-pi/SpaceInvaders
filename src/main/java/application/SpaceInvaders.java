@@ -28,8 +28,8 @@ public class SpaceInvaders extends Application {
     private static final int HEIGHT = 600;
     private static final int PLAYER_SIZE = 60;
 
-    static final Image PLAYER_IMG = new Image("file:/home/khai/IdeaProjects/SpaceInvaders/images/player.png");
-    static final Image EXPLOSION_IMG = new Image("file:/home/khai/IdeaProjects/SpaceInvaders/images.explosion.png");
+    static final Image PLAYER_IMG = new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/player.png");
+    static final Image EXPLOSION_IMG = new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/explosion.png");
 
     static final int EXPLOSION_W = 128;
     static final int EXPLOSION_ROWS = 3;
@@ -295,7 +295,6 @@ public class SpaceInvaders extends Application {
     }
 
     public static void main(String args[]) {
-        System.out.println("test");
         launch();
     }
 }
