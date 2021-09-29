@@ -28,8 +28,9 @@ public class SpaceInvaders extends Application {
     private static final int HEIGHT = 600;
     private static final int PLAYER_SIZE = 60;
 
-    static final Image PLAYER_IMG = new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/player.png");
-    static final Image EXPLOSION_IMG = new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/explosion.png");
+    static final String IMG_PATH = "file:" + System.getProperty("user.dir") + "/src/main/java/application/images/";
+    static final Image PLAYER_IMG = new Image(IMG_PATH + "player.png");
+    static final Image EXPLOSION_IMG = new Image(IMG_PATH + "explosion.png");
 
     static final int EXPLOSION_W = 128;
     static final int EXPLOSION_ROWS = 3;
@@ -38,16 +39,16 @@ public class SpaceInvaders extends Application {
     static final int EXPLOSION_STEPS = 15;
 
     static final Image BOMBS_IMG[] = {
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/1.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/2.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/3.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/4.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/5.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/6.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/7.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/8.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/9.png"),
-            new Image("file:/home/khai/IdeaProjects/SpaceInvaders/src/main/java/application/images/10.png"),
+            new Image(IMG_PATH + "1.png"),
+            new Image(IMG_PATH + "2.png"),
+            new Image(IMG_PATH + "3.png"),
+            new Image(IMG_PATH + "4.png"),
+            new Image(IMG_PATH + "5.png"),
+            new Image(IMG_PATH + "6.png"),
+            new Image(IMG_PATH + "7.png"),
+            new Image(IMG_PATH + "8.png"),
+            new Image(IMG_PATH + "9.png"),
+            new Image(IMG_PATH + "10.png"),
     };
 
     final int MAX_BOMBS = 10, MAX_SHOTS = MAX_BOMBS * 2 ;
